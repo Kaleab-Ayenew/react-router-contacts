@@ -10,6 +10,7 @@ import EditContact from "./routes/Edit";
 import {action as editAction} from "./routes/Edit"
 import { deleteAction } from './routes/contacts';
 import Index from './routes/childIndex';
+import {action as favAction} from "./routes/contacts"
 const router = createBrowserRouter([
   {
     path:"/",
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
       {
         path:"contacts/:contactId",
         element: <Contact/>,
-        loader: contactLoader
+        loader: contactLoader,
+        action: favAction
       },
       {
         path: "contacts/:contactId/edit",
